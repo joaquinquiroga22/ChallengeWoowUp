@@ -8,7 +8,8 @@ const { customer: { purchases } } = apiData;
 
 const allProducts = {};
 purchases.forEach((purchase) => {
-    // Si products no tiene el sku dentro, se cree con un valor inicial de 1 y si lo tiene le sumamos al valor actual + 1
+
+    // Si products no tiene el sku dentro, se cree con un valor inicial de 1 y si lo tiene le sumo al valor actual + 1
     purchase.products.forEach((product) => !allProducts[product.sku] ? allProducts[product.sku] = 1 : allProducts[product.sku] = allProducts[product.sku] + 1)
 })
 
